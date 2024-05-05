@@ -8,6 +8,7 @@ suspend fun main(): Unit = coroutineScope {
     launch(job) {
         repeat(1000) { num ->
             Thread.sleep(200)
+            // Job이 액티브 상태가 아니면 CancellationException을 던지는 ensureActive() 함수를 통해 중단 가능
             ensureActive()
             println("Printing $num")
         }

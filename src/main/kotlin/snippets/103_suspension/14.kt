@@ -8,21 +8,22 @@ import kotlin.coroutines.*
 var continuation: Continuation<Unit>? = null
 
 suspend fun suspendAndSetContinuation() {
-   suspendCoroutine<Unit> { cont ->
-       continuation = cont
-   }
+    suspendCoroutine<Unit> { cont ->
+        continuation = cont
+    }
 }
 
 suspend fun main() = coroutineScope {
-   println("Before")
+    println("Before")
 
-   launch {
-       delay(1000)
-       continuation?.resume(Unit)
-   }
+    launch {
+        delay(1000)
+        continuation?.resume(Unit)
+    }
 
-   suspendAndSetContinuation()
-   println("After")
+    println("suspendAndSetContinuation()")
+    suspendAndSetContinuation()
+    println("After")
 }
 // Before
 // (1 second delay)

@@ -7,23 +7,23 @@ import kotlinx.coroutines.runBlocking
 fun main() {
     runBlocking {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
     runBlocking {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
     runBlocking {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
-    println("Hello,")
+    println("${Thread.currentThread().name} Hello,")
 }
-// (1 sec)
+// (1초 후)
 // World!
-// (1 sec)
+// (1초 후)
 // World!
-// (1 sec)
+// (1초 후)
 // World!
 // Hello,
 //sampleEnd

@@ -4,6 +4,7 @@ import kotlinx.coroutines.*
 
 //sampleStart
 fun main(): Unit = runBlocking {
+    // 예외 전파를 막는 또 다른 방법은 코루틴 빌더를 supervisorScope로 래핑하는 것
   supervisorScope {
       launch {
           delay(1000)

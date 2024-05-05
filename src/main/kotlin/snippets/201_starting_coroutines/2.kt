@@ -8,17 +8,17 @@ import kotlinx.coroutines.launch
 suspend fun main() {
     val job1 = GlobalScope.launch {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
     val job2 = GlobalScope.launch {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
     val job3 = GlobalScope.launch {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
-    println("Hello,")
+    println("${Thread.currentThread().name} Hello,")
     job1.join()
     job2.join()
     job3.join()

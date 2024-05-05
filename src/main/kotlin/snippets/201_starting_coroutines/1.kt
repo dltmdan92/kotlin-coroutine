@@ -8,21 +8,21 @@ import kotlinx.coroutines.launch
 fun main() {
     GlobalScope.launch {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
     GlobalScope.launch {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
     GlobalScope.launch {
         delay(1000L)
-        println("World!")
+        println("${Thread.currentThread().name} World!")
     }
-    println("Hello,")
+    println("${Thread.currentThread().name} Hello,")
     Thread.sleep(2000L)
 }
 // Hello,
-// (1 sec)
+// (1초후)
 // World!
 // World!
 // World!

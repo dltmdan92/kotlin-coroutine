@@ -11,7 +11,7 @@ suspend fun main() = coroutineScope {
     println(job) // JobImpl{Completed}@ADD
 
     // launch is initially active by default
-    val activeJob = launch {
+    val activeJob: Job = launch {
         delay(1000)
     }
     println(activeJob) // StandaloneCoroutine{Active}@ADD
@@ -20,7 +20,7 @@ suspend fun main() = coroutineScope {
     println(activeJob) // StandaloneCoroutine{Completed}@ADD
 
     // launch started lazily is in New state
-    val lazyJob = launch(start = CoroutineStart.LAZY) {
+    val lazyJob: Job = launch(start = CoroutineStart.LAZY) {
         delay(1000)
     }
     println(lazyJob) // LazyStandaloneCoroutine{New}@ADD

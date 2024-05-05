@@ -22,6 +22,11 @@ suspend fun getTweets(): List<Tweet> {
     return listOf(Tweet("Hello, world"))
 }
 
+/**
+ * coroutineScope 함수는 기존의 중단 컨텍스트에서 벗어난 새로운 스코프를 만든다.
+ * 부모로부터 스코프를 상속받고 구조화된 동시성을 지원한다.
+ *
+ */
 suspend fun getUserDetails(): Details = coroutineScope {
     val userName = async { getUserName() }
     val followersNumber = async { getFollowersNumber() }

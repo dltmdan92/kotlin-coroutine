@@ -15,7 +15,8 @@ fun myFunction(continuation: Continuation<Unit>): Any {
     if (continuation.label == 0) {
         println("Before")
         continuation.label = 1
-        if (delay(1000, continuation) == COROUTINE_SUSPENDED){
+        if (
+            delay(1000, continuation) == COROUTINE_SUSPENDED){
             return COROUTINE_SUSPENDED
         }
     }

@@ -9,6 +9,7 @@ suspend fun main(): Unit = coroutineScope {
         do {
             Thread.sleep(200)
             println("Printing")
+            // 현재 코루틴의 상태 (active 한지?) 판단하여 중단 발생 가능
         } while (isActive)
     }
     delay(1100)

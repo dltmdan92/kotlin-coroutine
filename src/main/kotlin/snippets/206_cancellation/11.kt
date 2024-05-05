@@ -7,6 +7,8 @@ suspend fun main(): Unit = coroutineScope {
     val job = Job()
     launch(job) {
         repeat(1_000) { i ->
+            // 중단점은 delay이어야 한다.
+            // Thread.sleep은 코루틴의 중단점도 아니고 절대로 써서는 안된다.
             Thread.sleep(200) // We might have some
             // complex operations or reading files here
             println("Printing $i")
